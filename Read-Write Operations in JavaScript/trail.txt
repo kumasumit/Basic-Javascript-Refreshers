@@ -1,0 +1,2 @@
+this is a basic file to explain read write
+operations in javascript
