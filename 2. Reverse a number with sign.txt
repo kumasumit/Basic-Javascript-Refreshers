@@ -1,0 +1,77 @@
+1. convert the number into string in Javascript
+function reversedNum(num) {
+  return (
+    parseFloat(
+      num
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+    ) * Math.sign(num)
+  )                 
+}
+Math.sign() is to reverse the num with sign.
+// original value of num = -5432100
+// num = 12345
+num * Math.sign(-5432100)
+// num = -12345
+
+parseFloat(num) converts num into a float from a String.
+// num = '0012345-'
+parseFloat(num)
+// num = 12345 it also removes 9 from the front.
+
+2. Reverse the number without converting to string.
+<script>
+    let num = 4562;
+    // Function to reverse digits of num
+    function reversDigits(num) {
+        let rev_num = 0;
+        while(num > 0)
+        {
+            rev_num = rev_num * 10 + num % 10;
+            num = Math.floor(num / 10);
+        }
+        return rev_num;
+    }
+ // function call  
+    document.write(reversDigits(num));
+      
+</script>
+
+Python
+# Python program to reverse a number
+ 
+n = 4562
+rev = 0
+ 
+while(n > 0):
+    a = n % 10
+    rev = rev * 10 + a
+    n = n // 10
+ 
+print(rev)
+
+// Java program to reverse a number
+ 
+class KSP {
+    /* Iterative function to reverse
+    digits of num*/
+    static int reversDigits(int num)
+    {
+        int rev_num = 0;
+        while (num > 0) {
+            rev_num = rev_num * 10 + num % 10;
+            num = num / 10;
+        }
+        return rev_num;
+    }
+ 
+    // Driver code
+    public static void main(String[] args)
+    {
+        int num = 4562;
+        System.out.println("Reverse of no. is "
+                           + reversDigits(num));
+    }
+}
