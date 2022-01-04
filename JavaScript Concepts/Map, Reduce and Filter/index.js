@@ -19,3 +19,19 @@ function binary(x) {
 }
 const output = arr.map(binary);
 console.log(output);
+const newArr = arr.filter((x) => x % 2); //returns only odd values.
+console.log(newArr); // for even values, x%2==0 which means false, so it is not returned.
+console.log(
+  arr.reduce(function (acc, curr) {
+    acc = acc + curr;
+    return acc;
+  }, 0)
+);
+console.log(
+  arr.reduce(function (max, curr) {
+    if (curr > max) {
+      max = curr;
+    }
+    return max;
+  }, 0)
+);
